@@ -1,0 +1,2 @@
+rm ./tags
+ctags --exclude=./codeTest -R

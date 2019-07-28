@@ -1,0 +1,7 @@
+
+./db_bench   --benchmarks=fillrandom,stats,readrandom,stats --bloom_bits=10 --db=myDB --num=1000000 --reads=100000 --open_files=1500  --value_size=1024 --compression_type=none --threads=1 --histogram=1 --fixLevelandSeqs=1 --maxAppendLevelIdx=1 --maxSequences=3 | tee testResult
+
+./db_bench   --benchmarks=fillrandom,stats,readrandom,stats --bloom_bits=10 --db=myDB --num=1000000 --reads=100000 --open_files=1500  --value_size=1024 --compression_type=none --threads=1 --histogram=1 | tee testResult
+
+
+# ./db_bench   --benchmarks=fillseq,stats,fillrandom,stats,readrandom,stats,readseq,stats --bloom_bits=10 --db=myDB --num=1000000 --reads=100000 --open_files=1500  --value_size=1024 --compression_type=none --threads=4 --histogram=1 | tee testResult

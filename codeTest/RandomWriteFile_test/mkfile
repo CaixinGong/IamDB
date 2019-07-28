@@ -1,0 +1,1 @@
+g++ randomWriteFile.cc  -o randomWriteFile -lpthread -I ../../include   ../../libbranchdb.a

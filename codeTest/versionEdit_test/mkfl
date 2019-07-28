@@ -1,0 +1,1 @@
+g++ versionEdit_test.cc -g2 -o versionEdit_test -lpthread -lsnappy -DBRANCHDB_PLATFORM_POSIX -I ../../include -I ../../  ../../libbranchdb.a 

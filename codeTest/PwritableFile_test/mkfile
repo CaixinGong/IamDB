@@ -1,0 +1,1 @@
+g++ PwritableFile.cc -g  -o PwritableFile -lpthread -I ../../include   ../../libbranchdb.a

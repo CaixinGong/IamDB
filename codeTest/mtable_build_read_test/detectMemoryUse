@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo ------------------------------------------------------------------------------------------------------------------ | tee  memoryUseReport.txt
+
+
+x=1
+while [ $x -gt 0 ]
+do
+  free -m  | tee -a memoryUseReport.txt
+  sync  &&  echo 3 > /proc/sys/vm/drop_caches &&  free -m  | tee -a memoryUseReport.txt
+  echo ------------------------------------------------------------------------------------------------------------------ | tee -a memoryUseReport.txt
+  sleep 10
+done

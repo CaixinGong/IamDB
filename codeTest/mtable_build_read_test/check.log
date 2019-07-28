@@ -1,0 +1,34 @@
+==1711== Memcheck, a memory error detector
+==1711== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==1711== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==1711== Command: ./mtableTest
+==1711== Parent PID: 1395
+==1711== 
+==1711== 
+==1711== HEAP SUMMARY:
+==1711==     in use at exit: 6,384 bytes in 16 blocks
+==1711==   total heap usage: 173,522,761 allocs, 173,522,745 frees, 11,284,983,446 bytes allocated
+==1711== 
+==1711== 4,608 bytes in 8 blocks are possibly lost in loss record 9 of 9
+==1711==    at 0x4C2B9C6: calloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1711==    by 0x40129E4: _dl_allocate_tls (in /usr/lib64/ld-2.20.so)
+==1711==    by 0x4E3CEC7: pthread_create@@GLIBC_2.2.5 (in /usr/lib64/libpthread-2.20.so)
+==1711==    by 0x41E3E8: branchdb::ThreadPool::ThreadPool(int, bool&) (threadPool.h:24)
+==1711==    by 0x41C647: branchdb::(anonymous namespace)::PosixEnv::PosixEnv() (env_posix.cc:748)
+==1711==    by 0x41CA24: branchdb::InitDefaultEnv() (env_posix.cc:826)
+==1711==    by 0x4E42B2F: pthread_once (in /usr/lib64/libpthread-2.20.so)
+==1711==    by 0x41CA5C: branchdb::Env::Default() (env_posix.cc:829)
+==1711==    by 0x413407: branchdb::Options::Options() (options.cc:20)
+==1711==    by 0x403105: main (mtableTest.cc:79)
+==1711== 
+==1711== LEAK SUMMARY:
+==1711==    definitely lost: 0 bytes in 0 blocks
+==1711==    indirectly lost: 0 bytes in 0 blocks
+==1711==      possibly lost: 4,608 bytes in 8 blocks
+==1711==    still reachable: 1,776 bytes in 8 blocks
+==1711==         suppressed: 0 bytes in 0 blocks
+==1711== Reachable blocks (those to which a pointer was found) are not shown.
+==1711== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==1711== 
+==1711== For counts of detected and suppressed errors, rerun with: -v
+==1711== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

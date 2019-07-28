@@ -1,0 +1,1 @@
+g++ mtableTest.cc -g2 -o mtableTest -lpthread -lsnappy -DBRANCHDB_PLATFORM_POSIX -I ../../include -I ../../  ../../libbranchdb.a 
